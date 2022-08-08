@@ -7,18 +7,35 @@ import memories from './images/memories.png';
 import Posts from './components/Posts/Posts';
 import Forms from './components/Forms/Forms';
 import { getPosts } from './actions/post';
+import styles from './styles';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPosts);
+    dispatch(getPosts());
   }, [dispatch]);
   return (
     <Container maxWidth="lg">
-      <AppBar position="static" color="inherit" />
-      <Typography variant="h2" align="center">Memories</Typography>
-      <img src={memories} alt="memories" height="60" />
+      <AppBar
+        sx={styles.appBar}
+        position="static"
+        color="inherit"
+      >
+        <Typography
+          sx={styles.heading}
+          variant="h2"
+          align="center"
+        >
+          Memories
+        </Typography>
+        <img
+          sx={styles.image}
+          src={memories}
+          alt="memories"
+          height="60"
+        />
+      </AppBar>
       <Grow in>
         <Container>
           <Grid container justifyItems="space-between" alignItems="stretch" spacing={3}>
