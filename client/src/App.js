@@ -7,7 +7,7 @@ import Forms from "./Forms/Forms";
 const App = () => {
 
     return (
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" >
             <AppBar position="static" color="inherit"></AppBar>
             <Typography  variant="h2" align="center">Memories</Typography>
             <img  src={memories} alt="memories" height="60"/>
