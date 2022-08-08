@@ -1,9 +1,10 @@
+// eslint-disable-next-line default-param-last
 export default (posts = [], action) => {
-  switch (action) {
+  switch (action.type) {
     case 'FETCH_ALL':
-      return posts;
+      return action.payload;
     case 'CREATE':
-      return posts;
+      return [...posts, action.payload];
     default:
       return posts;
   }
