@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
 import {AppBar, Container, Grid, Grow, Typography} from "@mui/material";
 import memories from './images/memories.png'
-import Posts from "./Posts/Posts";
-import Forms from "./Forms/Forms";
+import Posts from "./components/Posts/Posts";
+import Forms from "./components/Forms/Forms";
 import {useDispatch} from "react-redux";
 import {getPosts} from "./actions/post";
 
