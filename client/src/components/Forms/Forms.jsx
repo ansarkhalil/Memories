@@ -3,12 +3,13 @@ import {
   Button, Paper, TextField, Typography,
 } from '@mui/material';
 import { useDispatch } from 'react-redux';
+import FileBase64 from 'react-file-base64';
 import { createPost } from '../../actions/post';
 import styles from './styles';
 
 function Forms() {
   const [postData, setPostData] = useState({
-    creator: '', title: '', message: '', tags: '',
+    creator: '', title: '', message: '', tags: '', selectedFile: '',
   });
 
   const dispatch = useDispatch();
@@ -60,6 +61,12 @@ function Forms() {
           label="tags"
           fullWidth
         />
+        <div style={styles.fileInput}>
+          <FileBase64
+            multiple={false}
+            onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })}
+          />
+        </div>
         <Button sx={styles.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
         <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
       </form>

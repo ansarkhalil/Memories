@@ -6,7 +6,6 @@ import Post from './Post/Post';
 
 function Posts() {
   const posts = useSelector((state) => state.posts);
-  console.log(posts);
   return (
     !posts.length ? <CircularProgress /> : (
       <Grid sx={styles.mainContainer} container alignItems="stretch" spacing={3}>
